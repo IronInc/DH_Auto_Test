@@ -4,6 +4,9 @@ using TechTalk.SpecFlow;
 //Hereby the libraries needed to trigger Selenium on Chrome
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+//Additional libraries
+using DH_Auto_Test_Exercise.DHPages;
+using System.Diagnostics;
 
 namespace DH_Auto_Test_Exercise
 {
@@ -12,7 +15,12 @@ namespace DH_Auto_Test_Exercise
     [Binding]
     public class HomePageFeaturesSteps
     {
-        private IWebDriver driver = new ChromeDriver(@"C:\browserdrivers\chromedriver\");
+
+        //Declare objects
+        IWebDriver driver = new ChromeDriver(@"C:\browserdrivers\chromedriver\");
+        DHHomePage objDHHomePage;
+        DHFormPage objDHFormPage;
+        DHSiteCommons objDHSiteCommons;
 
         //---------------------------------------------------------------------------------------------
 
@@ -24,23 +32,28 @@ namespace DH_Auto_Test_Exercise
 
         //---------------------------------------------------------------------------------------------
 
-        [Then(@"the title (.*) is visible")]
-        [Given(@"the title (.*) is visible")]
-        public void GivenTheTitleUITestingIsVisible(String title)
+        [Then(@"the title of the site UI Testing is visible")]
+        [Given(@"the title of the site UI Testing is visible")]
+        public void GivenTheTitleUITestingIsVisible()
         {
-            driver.FindElement(By.Id(title));
+            objDHSiteCommons.CheckTitleSite();
         }
 
         //---------------------------------------------------------------------------------------------
 
         [When(@"I click on button (.*)")]
         public void WhenIClickOnButtonForm(String button)
-        { 
-           driver.FindElement(By.Id(button)).Click();
-           
+        {
+            objDHSiteCommons.ClickkOnSiteButton(button);
         }
 
         //---------------------------------------------------------------------------------------------
+
+        [When(@"the DH logo is visible")]
+        public void TheDHlogoIsVisible()
+        {
+            Debug.Assert(objDHSiteCommons.IsImageLogoVisible());
+        }
 
     }
 }
