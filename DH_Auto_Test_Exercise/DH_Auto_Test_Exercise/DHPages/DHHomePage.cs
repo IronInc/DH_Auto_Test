@@ -15,9 +15,8 @@ namespace DH_Auto_Test_Exercise
         IWebDriver driver;
 
         By activeHome = By.XPath("//li[@class='active']/a[@id='home']");
-
+        String urlHome = "http://uitest.duodecadits.com/";
         String homeMessage = "Welcome to the Docler Holding QA Department";
-
         String homeMessageDesc = "This site is dedicated to perform some exercises and demonstrate automated web testing.";
 
         By homeMessageLoc = By.XPath("//div[@class='ui-test']/h1");
@@ -39,15 +38,18 @@ namespace DH_Auto_Test_Exercise
             Debug.Assert(homeMessageDesc.Equals(driver.FindElement(homeMessageDescLoc).Text));
         }
 
-        public Boolean isHomePageActive()
+        public Boolean IsHomePageActive()
         {
 
             return driver.FindElement(activeHome).Displayed;
 
         }
 
-
-
+        public Boolean IamOnHomePage()
+        {
+            String url = driver.Url;
+            return url.Equals(urlHome);
+        }
 
 
     }

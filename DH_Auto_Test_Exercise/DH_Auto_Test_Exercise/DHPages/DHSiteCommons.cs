@@ -23,9 +23,6 @@ namespace DH_Auto_Test_Exercise.DHPages
 
         By idHome = By.Id("home");
 
-
-     //   By activeError = By.XPath("//li[@class='active']/a[@id='error']");
-
         By imageLogo = By.Id("dh_logo");
 
 

@@ -16,6 +16,7 @@ namespace DH_Auto_Test_Exercise
         By activeForm = By.XPath("//li[@class='active']/a[@id='form']");
 
         String formMessage = "Simple Form Submission";
+        String urlForm = "http://uitest.duodecadits.com/form.html";
 
         By formMessageLoc = By.XPath("//div[@class='ui-test']/h1");
 
@@ -58,6 +59,12 @@ namespace DH_Auto_Test_Exercise
         public void ClickOnSubmitButton()
         {
             driver.FindElement(inputButton).Click();
+        }
+
+        public Boolean IamOnFormPage()
+        {
+            String url = driver.Url;
+            return url.Equals(urlForm);
         }
 
     }
