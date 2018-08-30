@@ -11,6 +11,7 @@ namespace DH_Auto_Test_Exercise
 {
     class DHHomePage
     {
+        //This class contains elements and functions related to the Home page
 
         IWebDriver driver;
 
@@ -30,16 +31,21 @@ namespace DH_Auto_Test_Exercise
 
         public void checkHomePageMessage()
         {
+            //This checks the message of the Home page's header
+
             Debug.Assert(homeMessage.Equals(driver.FindElement(homeMessageLoc).Text));
         }
 
         public void checkHomePageDescMessage()
         {
+            //This checks the message of the Home page's body text
+
             Debug.Assert(homeMessageDesc.Equals(driver.FindElement(homeMessageDescLoc).Text));
         }
 
         public Boolean IsHomePageActive()
         {
+            //Returns true if the home page is active
 
             return driver.FindElement(activeHome).Displayed;
 
@@ -47,6 +53,8 @@ namespace DH_Auto_Test_Exercise
 
         public Boolean IamOnHomePage()
         {
+            //Returns true if the Home page is loaded
+
             String url = driver.Url;
             return url.Equals(urlHome);
         }

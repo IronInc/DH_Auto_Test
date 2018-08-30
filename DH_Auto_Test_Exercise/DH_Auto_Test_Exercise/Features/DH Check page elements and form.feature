@@ -49,7 +49,7 @@ Scenario Outline: Clicking on home \ form button renders such button active
 
 Given I am on the DH UI Testing home website
 When I click on button <button>
-Then home page is active
+Then <button> page is active
 
 Examples:
 
@@ -82,8 +82,8 @@ Examples:
 Scenario: Home page features the text "Welcome to the Docler Holding QA Department" in h1
 
 Given I am on the DH UI Testing home website
-When I click on button "home"
-Then the text in h1 should read "Welcome to the Docler Holding QA Department"
+When I click on button home
+Then the text in h1 should read Welcome to the Docler Holding QA Department
 
 #------------------------------------------------------------------------------------------------------
 
@@ -92,8 +92,8 @@ Then the text in h1 should read "Welcome to the Docler Holding QA Department"
 Scenario: Home page features the text "This site is dedicated to perform some exercises and demonstrate automated web testing." in p
 
 Given I am on the DH UI Testing home website
-When I click on button "home"
-Then the text in p should read "This site is dedicated to perform some exercises and demonstrate automated web testing."
+When I click on button home
+Then the text in p should read This site is dedicated to perform some exercises and demonstrate automated web testing.
 
 #------------------------------------------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ Then the text in p should read "This site is dedicated to perform some exercises
 Scenario: Check the input box and the input button are visible
 
 Given I am on the DH UI Testing home website
-When I click on button "form"
+When I click on button form
 Then the input box is visible
 And the input button is visible
 
@@ -113,15 +113,19 @@ And the input button is visible
 Scenario Outline: Input a value in home field and see submission leads to Hello page
 
 Given I am on the DH UI Testing home website
-When I click on button "form"
-And I enter value "<value>" in the input box
+When I click on button form
+And I enter value <value> in the input box
 And I submit the form
 Then I check the hello page with <value> is displayed
 
 Examples:
 
-	| value	|
-	| World |
+	| value	 |
+	| John   |
+	| Sophia |
+	| Charlie|
+	| Emily  |
+
 
 #------------------------------------------------------------------------------------------------------
 
@@ -130,7 +134,7 @@ Examples:
 Scenario: Clicking on error tab leads to error page 404
 
 Given I am on the DH UI Testing home website
-When I click on button "error"
+When I click on button error
 Then I check a 404 error is displayed
 
 #------------------------------------------------------------------------------------------------------

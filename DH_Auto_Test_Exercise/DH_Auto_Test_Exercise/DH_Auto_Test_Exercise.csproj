@@ -32,17 +32,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\Home page features.feature.cs">
+    <Compile Update="Features\DH Check page elements and form.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Home page features.feature</DependentUpon>
+      <DependentUpon>DH Check page elements and form.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Features\Home page features.feature">
+    <None Update="Features\DH Check page elements and form.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Home page features.feature.cs</LastGenOutput>
+      <LastGenOutput>DH Check page elements and form.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

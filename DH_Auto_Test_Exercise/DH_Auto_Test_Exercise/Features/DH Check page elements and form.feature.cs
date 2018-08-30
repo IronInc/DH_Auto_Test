@@ -24,7 +24,7 @@ namespace DH_Auto_Test_Exercise.Features
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Home page features.feature"
+#line 1 "DH Check page elements and form.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -158,7 +158,7 @@ testRunner.Given("I am on the DH UI Testing home website", ((string)(null)), ((T
 #line 51
 testRunner.When(string.Format("I click on button {0}", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
-testRunner.Then("home page is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("{0} page is active", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -210,9 +210,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 84
 testRunner.Given("I am on the DH UI Testing home website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 85
-testRunner.When("I click on button \"home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on button home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
-testRunner.Then("the text in h1 should read \"Welcome to the Docler Holding QA Department\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the text in h1 should read Welcome to the Docler Holding QA Department", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -234,10 +234,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 94
 testRunner.Given("I am on the DH UI Testing home website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 95
-testRunner.When("I click on button \"home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on button home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
-testRunner.Then("the text in p should read \"This site is dedicated to perform some exercises and d" +
-                    "emonstrate automated web testing.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the text in p should read This site is dedicated to perform some exercises and de" +
+                    "monstrate automated web testing.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -257,7 +257,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 104
 testRunner.Given("I am on the DH UI Testing home website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 105
-testRunner.When("I click on button \"form\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on button form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
 testRunner.Then("the input box is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 107
@@ -270,7 +270,10 @@ testRunner.And("the input button is visible", ((string)(null)), ((TechTalk.SpecF
         [NUnit.Framework.DescriptionAttribute("Input a value in home field and see submission leads to Hello page")]
         [NUnit.Framework.CategoryAttribute("high")]
         [NUnit.Framework.CategoryAttribute("inputform")]
-        [NUnit.Framework.TestCaseAttribute("World", null)]
+        [NUnit.Framework.TestCaseAttribute("John", null)]
+        [NUnit.Framework.TestCaseAttribute("Sophia", null)]
+        [NUnit.Framework.TestCaseAttribute("Charlie", null)]
+        [NUnit.Framework.TestCaseAttribute("Emily", null)]
         public virtual void InputAValueInHomeFieldAndSeeSubmissionLeadsToHelloPage(string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -287,9 +290,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 115
 testRunner.Given("I am on the DH UI Testing home website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 116
-testRunner.When("I click on button \"form\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on button form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 117
-testRunner.And(string.Format("I enter value \"{0}\" in the input box", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I enter value {0} in the input box", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 118
 testRunner.And("I submit the form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
@@ -307,14 +310,14 @@ testRunner.Then(string.Format("I check the hello page with {0} is displayed", va
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clicking on error tab leads to error page 404", null, new string[] {
                         "high",
                         "errorpage"});
-#line 130
+#line 134
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 132
+#line 136
 testRunner.Given("I am on the DH UI Testing home website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 133
-testRunner.When("I click on button \"error\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
+#line 137
+testRunner.When("I click on button error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 138
 testRunner.Then("I check a 404 error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

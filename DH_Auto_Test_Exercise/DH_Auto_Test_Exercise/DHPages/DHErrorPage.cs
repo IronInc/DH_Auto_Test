@@ -11,11 +11,13 @@ namespace DH_Auto_Test_Exercise.DHPages
 {
     class DHErrorPage
     {
+        //This class contains elements and functions related to the Error page
+
         IWebDriver driver;
 
-        String errorMessage = "404 Error: File not found :-)";
+        String errorMessage = "404 Error: File not found :-(";
 
-        By errorMessageLoc = By.XPath("/h1");
+        By errorMessageLoc = By.XPath("//h1");
 
         //we get the driver on the constructor
         public DHErrorPage(IWebDriver driver)
@@ -23,8 +25,10 @@ namespace DH_Auto_Test_Exercise.DHPages
             this.driver = driver;
         }
 
-        public void checkErrorPageMessage()
+        public void CheckErrorPageMessage()
         {
+            //Check the error message is shown
+
             Debug.Assert(errorMessage.Equals(driver.FindElement(errorMessageLoc).Text));
         }
 

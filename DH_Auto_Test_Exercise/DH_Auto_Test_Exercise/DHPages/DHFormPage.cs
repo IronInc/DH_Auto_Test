@@ -11,6 +11,8 @@ namespace DH_Auto_Test_Exercise
 {
     class DHFormPage
     {
+        //This class contains elements and operations related to the Form page
+
         IWebDriver driver;
 
         By activeForm = By.XPath("//li[@class='active']/a[@id='form']");
@@ -31,11 +33,14 @@ namespace DH_Auto_Test_Exercise
 
         public void CheckFormPageMessage()
         {
+            //This checks the text that should show on the Form page's header text
+
             Debug.Assert(formMessage.Equals(driver.FindElement(formMessageLoc).Text));
         }
 
-        public Boolean isFormPageActive()
+        public Boolean IsFormPageActive()
         {
+            //Returns true if the Form button is active
 
             return driver.FindElement(activeForm).Displayed;
 
@@ -43,26 +48,36 @@ namespace DH_Auto_Test_Exercise
 
         public void CheckInputBox()
         {
+            //This checks the input box is visible
+
             Debug.Assert(driver.FindElement(inputBox).Displayed);
         }
 
         public void CheckInputButton()
         {
+            //This checks the input button is visible
+
             Debug.Assert(driver.FindElement(inputButton).Displayed);
         }
 
         public void EnterValue(String text)
         {
+            //This sends a string in the input box
+
             driver.FindElement(inputBox).SendKeys(text);
         }
 
         public void ClickOnSubmitButton()
         {
+            //This clicks on the input button
+
             driver.FindElement(inputButton).Click();
         }
 
         public Boolean IamOnFormPage()
         {
+            //This checks form page is loaded
+
             String url = driver.Url;
             return url.Equals(urlForm);
         }

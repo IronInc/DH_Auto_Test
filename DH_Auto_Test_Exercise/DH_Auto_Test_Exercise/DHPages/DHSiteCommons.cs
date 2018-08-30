@@ -11,6 +11,8 @@ namespace DH_Auto_Test_Exercise.DHPages
 {
     class DHSiteCommons
     {
+        // This class contains common elements and functions that don't belong to a specific page
+
         IWebDriver driver;
 
         By idSite = By.Id("site");
@@ -31,8 +33,11 @@ namespace DH_Auto_Test_Exercise.DHPages
             this.driver = driver;
         }
 
-        public void ClickkOnSiteButton(String site)
+        public void ClickOnSiteButton(String site)
         {
+            //This function clicks on a button located on the header
+
+            Console.WriteLine("HOLA: " + site);
 
             if (site.Equals("home"))
                 driver.FindElement(idHome).Click();
@@ -44,7 +49,7 @@ namespace DH_Auto_Test_Exercise.DHPages
                 driver.FindElement(idSite).Click();
             else //error, wrong option 
             {
-                Console.WriteLine("WRONG OPTION");
+                Console.WriteLine("WRONG OPTION: " + site);
                 Debug.Assert(false);
             }
 
@@ -56,16 +61,18 @@ namespace DH_Auto_Test_Exercise.DHPages
 
         public void CheckTitleSite()
         {
+            //This function finds the title and checks its name
 
             String detectText = driver.FindElement(idSite).Text;
             Debug.Assert(siteHeader.Equals(detectText));
 
         }
 
-        //Check whether the logo is visible
 
         public Boolean IsImageLogoVisible()
         {
+            //This checks whether the logo is visible
+
             return driver.FindElement(imageLogo).Displayed;
         }
     }
