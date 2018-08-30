@@ -15,6 +15,14 @@ SpecFlow package must be installed on Visual Studio project via NuGet manager (r
 
 Selenium 3 framework must be installed on Visual Studio project via NuGet manager.
 
+# Content of the project
+
+Folder 'Features' that contains one feature 'DH Check page elements and form.feature'. Given the low complexity of this project and how the test requirements are related to each other, one feature has been deemed enough.
+
+Step definition on DHSteps.cs
+
+Folder DHPages with Page Object definition on DHErrorPage.cs, DHHomePage.cs, DHFormPage.cs, DHHelloPage.cs, DHSiteCommons.cs. Further details can be checked on the comments of the code.
+
 # Test Machine
 
 Windows 7 Professional Service Pack 1.
@@ -26,7 +34,7 @@ Chrome 68.0.3440.106 (latest release version).
 Build the project by right clicking on DH_Auto_Test_Exercise \ Build.
 
 Open the Test Explorer on Visual Studio by hitting 'Test' from the menu; then click on Windows / Test Explorer.
-The Test Explorer window will open.
+The Test Explorer window will open and the test cases will be shown.
 
 Then click on 'Run all' to run all the tests, or simply right click one of the test scenarios and click on 'Run selected tests'. There is also the possibility of clicking on the 'Run tests in parallel' icon to run the test cases in parallel.
 
